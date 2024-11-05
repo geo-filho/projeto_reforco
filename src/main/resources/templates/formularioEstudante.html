@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${estudante.id} != null ? 'Edição de Estudante' : 'Cadastro de Estudante'"></title>
+</head>
+<body>
+<h1 th:text="${estudante.id} != null ? 'Edição de Estudante' : 'Cadastro de Estudante'"></h1>
+<form th:action="@{${estudante.id} != null ? '/estudantes/atualizar/' + ${estudante.id} : '/estudantes'}"
+      th:object="${estudante}" method="post">
+    <div>
+        <label>Nome:</label>
+        <input type="text" th:field="*{nome}" required />
+    </div>
+    <div>
+        <label>Idade:</label>
+        <input type="number" th:field="*{idade}" required />
+    </div>
+    <div>
+        <label>Responsável:</label>
+        <input type="text" th:field="*{responsavel}" required />
+    </div>
+    <div>
+        <label>Escola:</label>
+        <input type="text" th:field="*{escola}" required />
+    </div>
+    <div>
+        <label>Série:</label>
+        <input type="text" th:field="*{serie}" required />
+    </div>
+    <div>
+        <label>Turno:</label>
+        <select th:field="*{turno}" required>
+            <option value="" disabled selected>Selecione um turno</option>
+            <option value="manhã">Manhã</option>
+            <option value="tarde">Tarde</option>
+        </select>
+    </div>
+    <div>
+        <label>Sexo:</label>
+        <select th:field="*{sexo}" required>
+            <option value="" disabled selected>Selecione um sexo</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select>
+    </div>
+    <div>
+        <label>Contato:</label>
+        <input type="text" th:field="*{contato}" required />
+    </div>
+    <div>
+        <button type="submit">Salvar</button>
+    </div>
+</form>
+<a href="/estudantes">Voltar à lista</a>
+</body>
+</html>

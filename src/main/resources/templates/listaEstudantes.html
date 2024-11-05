@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Estudantes</title>
+</head>
+<body>
+<h1>Lista de Estudantes</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Responsável</th>
+        <th>Escola</th>
+        <th>Série</th>
+        <th>Turno</th>
+        <th>Sexo</th>
+        <th>Contato</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="estudante : ${estudantes}">
+        <td th:text="${estudante.id}"></td>
+        <td th:text="${estudante.nome}"></td>
+        <td th:text="${estudante.idade}"></td>
+        <td th:text="${estudante.responsavel}"></td>
+        <td th:text="${estudante.escola}"></td>
+        <td th:text="${estudante.serie}"></td>
+        <td th:text="${estudante.turno}"></td>
+        <td th:text="${estudante.sexo}"></td>
+        <td th:text="${estudante.contato}"></td>
+        <td>
+            <a th:href="@{/estudantes/editar/{id}(id=${estudante.id})}">Editar</a>
+            <a th:href="@{/estudantes/deletar/{id}(id=${estudante.id})}" onclick="return confirm('Tem certeza que deseja deletar?');">Deletar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/estudantes/novo">Cadastrar Novo Estudante</a>
+</body>
+</html>
