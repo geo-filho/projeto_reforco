@@ -1,56 +1,96 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${estudante.id} != null ? 'Edição de Estudante' : 'Cadastro de Estudante'"></title>
+    <link rel="stylesheet" href="/styleform.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap">
 </head>
+
 <body>
-<h1 th:text="${estudante.id} != null ? 'Edição de Estudante' : 'Cadastro de Estudante'"></h1>
-<form th:action="@{${estudante.id} != null ? '/estudantes/atualizar/' + ${estudante.id} : '/estudantes'}"
-      th:object="${estudante}" method="post">
-    <div>
-        <label>Nome:</label>
-        <input type="text" th:field="*{nome}" required />
+<div class="container">
+    <div class="form-image">
+        <img src="assets/img/undraw_shopping_re_3wst.svg" alt="">
     </div>
-    <div>
-        <label>Idade:</label>
-        <input type="number" th:field="*{idade}" required />
+    <div class="form">
+        <form th:action="@{${estudante.id} != null ? '/estudantes/atualizar/' + ${estudante.id} : '/estudantes'}" th:object="${estudante}" method="post">
+            <div class="form-header">
+                <h1 th:text="${estudante.id} != null ? 'Edição de Estudante' : 'Cadastro de Estudante'"></h1>
+                <div class="login-button">
+                    <button><a href="/estudantes">Voltar à lista</a></button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label>Nome:</label>
+                    <input type="text" th:field="*{nome}" required />
+                </div>
+                <div class="input-box">
+                    <label>Idade:</label>
+                    <input type="number" th:field="*{idade}" required />
+                </div>
+                <div class="input-box">
+                    <label>Responsável:</label>
+                    <input type="text" th:field="*{responsavel}" required />
+                </div>
+                <div class="input-box">
+                    <label>Escola:</label>
+                    <input type="text" th:field="*{escola}" required />
+                </div>
+                <div class="input-box">
+                    <label>Série:</label>
+                    <input type="text" th:field="*{serie}" required />
+                </div>
+                <div class="input-box">
+                    <label>Contato:</label>
+                    <input type="text" th:field="*{contato}" required />
+                </div>
+            </div>
+
+            <div class="gender-inputs">
+                <div class="gender-title">
+                    <h6>Gênero</h6>
+                </div>
+
+                <div class="gender-group">
+                    <div class="gender-input">
+                        <input id="female" type="radio" th:field="*{sexo}" value="feminino">
+                        <label for="female">Feminino</label>
+                    </div>
+
+                    <div class="gender-input">
+                        <input id="male" type="radio" th:field="*{sexo}" value="masculino">
+                        <label for="male">Masculino</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gender-inputs">
+                <div class="gender-title" style="padding-top: 50px;">
+                    <h6>Turno</h6>
+                </div>
+
+                <div class="gender-group">
+                    <div class="gender-input">
+                        <input id="Manhã" type="radio" th:field="*{turno}" value="manhã">
+                        <label for="Manhã">Manhã</label>
+                    </div>
+
+                    <div class="gender-input">
+                        <input id="Tarde" type="radio" th:field="*{turno}" value="tarde">
+                        <label for="Tarde">Tarde</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="continue-button">
+                <button type="submit" style="color: white;">Salvar</button>
+            </div>
+        </form>
     </div>
-    <div>
-        <label>Responsável:</label>
-        <input type="text" th:field="*{responsavel}" required />
-    </div>
-    <div>
-        <label>Escola:</label>
-        <input type="text" th:field="*{escola}" required />
-    </div>
-    <div>
-        <label>Série:</label>
-        <input type="text" th:field="*{serie}" required />
-    </div>
-    <div>
-        <label>Turno:</label>
-        <select th:field="*{turno}" required>
-            <option value="" disabled selected>Selecione um turno</option>
-            <option value="manhã">Manhã</option>
-            <option value="tarde">Tarde</option>
-        </select>
-    </div>
-    <div>
-        <label>Sexo:</label>
-        <select th:field="*{sexo}" required>
-            <option value="" disabled selected>Selecione um sexo</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-        </select>
-    </div>
-    <div>
-        <label>Contato:</label>
-        <input type="text" th:field="*{contato}" required />
-    </div>
-    <div>
-        <button type="submit">Salvar</button>
-    </div>
-</form>
-<a href="/estudantes">Voltar à lista</a>
+</div>
 </body>
 </html>

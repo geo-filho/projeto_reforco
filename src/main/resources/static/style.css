@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+body {
+    background: #e9f7e1; /* Cor de fundo mais suave em verde claro */
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px; /* Define a largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+    padding: 1rem; /* Adiciona espaçamento interno */
+}
+
+main {
+    flex-grow: 1; /* Para que o conteúdo principal ocupe o máximo de altura possível */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo principal */
+    flex-direction: column;
+    width: 100%;
+}
+
+table {
+    width: 100%; /* A tabela agora ocupa toda a largura do container */
+    margin-top: 0rem;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    background-color: #28a745; /* Verde para o cabeçalho */
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f8f1;
+}
+
+td a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #28a745;
+    margin-right: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem; /* Reduzindo o tamanho da fonte */
+}
+
+td a:hover {
+    background-color: #218838;
+}
+
+td a.delete {
+    background-color: #dc3545;
+}
+
+td a.delete:hover {
+    background-color: #c82333;
+}
+
+td a.delete {
+    font-size: 0.9rem; /* Reduzindo o tamanho da fonte para Deletar */
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #28a745; /* Cor do botão de ação */
+    text-align: center;
+    width: auto; /* Não ocupar toda a largura */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:hover {
+    background-color: #218838;
+}
+
+td {
+    text-align: center;
+}
+
+td a {
+    margin: 0 5px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%; /* Certifica-se de que a tabela ocupe toda a largura, mesmo em telas pequenas */
+    }
+
+    th, td {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    td a {
+        font-size: 0.9rem;
+    }
+
+    a {
+        font-size: 0.9rem; /* Fonte um pouco menor para telas pequenas */
+        padding: 0.5rem 0.8rem;
+    }
+}
