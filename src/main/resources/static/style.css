@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #e9f7e1; /* Cor de fundo mais suave em verde claro */
+    background: #aadde0; /* Cor de fundo mais suave em verde claro */
     font-size: 1rem;
     display: flex;
     flex-direction: column;
@@ -16,21 +16,21 @@ body {
 }
 
 .container {
-    max-width: 1200px; /* Define a largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-    padding: 1rem; /* Adiciona espaçamento interno */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 main {
-    flex-grow: 1; /* Para que o conteúdo principal ocupe o máximo de altura possível */
+    flex-grow: 1;
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo principal */
+    justify-content: center;
     flex-direction: column;
     width: 100%;
 }
 
 table {
-    width: 100%; /* A tabela agora ocupa toda a largura do container */
+    width: 100%;
     margin-top: 0rem;
     border-collapse: collapse;
     background-color: #fff;
@@ -47,7 +47,7 @@ th, td {
 }
 
 th {
-    background-color: #28a745; /* Verde para o cabeçalho */
+    background-color: #003043; /* Azul para o cabeçalho */
     color: white;
 }
 
@@ -65,14 +65,14 @@ td a {
     border-radius: 5px;
     text-decoration: none;
     color: white;
-    background-color: #28a745;
+    background-color: #be6ebb;
     margin-right: 0.5rem;
     text-align: center;
-    font-size: 0.9rem; /* Reduzindo o tamanho da fonte */
+    font-size: 0.9rem;
 }
 
 td a:hover {
-    background-color: #218838;
+    background-color: #be6ebb;
 }
 
 td a.delete {
@@ -84,7 +84,7 @@ td a.delete:hover {
 }
 
 td a.delete {
-    font-size: 0.9rem; /* Reduzindo o tamanho da fonte para Deletar */
+    font-size: 0.9rem;
 }
 
 a {
@@ -96,15 +96,15 @@ a {
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    background-color: #28a745; /* Cor do botão de ação */
+    background-color: #be6ebb; /* Cor do botão de ação */
     text-align: center;
-    width: auto; /* Não ocupar toda a largura */
+    width: auto;
     margin-left: auto;
     margin-right: auto;
 }
 
 a:hover {
-    background-color: #218838;
+    background-color: #003043;
 }
 
 td {
@@ -118,7 +118,7 @@ td a {
 
 @media screen and (max-width: 768px) {
     table {
-        width: 100%; /* Certifica-se de que a tabela ocupe toda a largura, mesmo em telas pequenas */
+        width: 100%;
     }
 
     th, td {
@@ -131,7 +131,7 @@ td a {
     }
 
     a {
-        font-size: 0.9rem; /* Fonte um pouco menor para telas pequenas */
+        font-size: 0.9rem;
         padding: 0.5rem 0.8rem;
     }
 }
